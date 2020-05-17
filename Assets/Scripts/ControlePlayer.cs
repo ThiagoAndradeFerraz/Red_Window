@@ -5,8 +5,16 @@ using UnityEngine;
 public class ControlePlayer : MonoBehaviour
 {
     Rigidbody rb;
-    int velocidade = 1;
+    int velocidadeAndar = 1;
+    int velocidadeCorrer = 3;
     Animator anim;
+
+    float turnSmoothTime = 0.2f;
+    float turnSmoothVelocid;
+
+    float speedSmoothTime = 0.1f;
+    float speedSmoothVelocid;
+    float velocidadeAgr;
 
     // Start is called before the first frame update
     void Start()
@@ -23,38 +31,24 @@ public class ControlePlayer : MonoBehaviour
 
     void Controle()
     {
-        Vector3 vetorMovimento = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.position += vetorMovimento * velocidade * Time.deltaTime;
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 inputDir = input.normalized;
 
-        if (vetorMovimento != Vector3.zero)
+        if(inputDir != Vector2.zero)
         {
-            transform.rotation = Quaternion.LookRotation(vetorMovimento);
+            float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, 
+                targetRotation, ref turnSmoothVelocid, turnSmoothTime);
         }
 
-        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                anim.SetBool("boolCorrendo", true);
-                anim.SetBool("boolAndando", false);
-                anim.SetBool("boolParado", false);
-            }
-            else
-            {
-                anim.SetBool("boolAndando", true);
-                anim.SetBool("boolCorrendo", false);
-                anim.SetBool("boolParado", false);
-            }
-        }
-        else
-        {
-            anim.SetBool("boolCorrendo", false);
-            anim.SetBool("boolAndando", false);
-            anim.SetBool("boolParado", true);
-        }
-
-        
+        bool correndo = Input.GetKey(KeyCode.LeftShift);
+        float targetSpeed = ((correndo) ? velocidadeCorrer : velocidadeAndar) * inputDir.magnitude;
+        velocidadeAgr = Mathf.SmoothDamp(velocidadeAgr, targetSpeed, ref speedSmoothVelocid, speedSmoothTime);
 
 
+        transform.Translate(transform.forward * velocidadeAgr * Time.deltaTime, Space.World);
+
+        float animPercentVelocid = ((correndo) ? 1 : .5f) * inputDir.magnitude;
+        anim.SetFloat("speedPercent", animPercentVelocid, speedSmoothTime, Time.deltaTime);
     }
 }

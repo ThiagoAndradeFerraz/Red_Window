@@ -301,6 +301,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 425925076a6fa6d4f92bb7bd7e9f182f, type: 2}
+    - target: {fileID: -6057140222963153312, guid: cc70041006d2d074cba8d5fb9c4c3a24,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: cc70041006d2d074cba8d5fb9c4c3a24,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,10 +507,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880455000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.562363, y: 0.46996796, z: 5.489}
+  m_LocalRotation: {x: -0, y: 0.96756214, z: -0.25263327, w: 0}
+  m_LocalPosition: {x: 9.562363, y: 0.76, z: 6.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.267002, y: 180.00002, z: 0}
