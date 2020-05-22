@@ -72,7 +72,9 @@
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vComment.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vPickupItem.cs" />
-    <Compile Include="Assets\Scripts\ControlePlayer.cs" />
+    <Compile Include="Assets\Scripts\Player\CameraPlayer.cs" />
+    <Compile Include="Assets\Scripts\Player\ControlePlayer.cs" />
+    <Compile Include="Assets\Scripts\Player1\Controle.cs" />
     <None Include="Assets\Invector-3rdPersonController_LITE\README_Basic.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/thiag/Documents/RED_WINDOW/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
