@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Controle : MonoBehaviour
 {
-    private int velocidade;
+    public GameObject telaPreta;
+
+    Rigidbody rb;
+    bool gravidade = true; // APAGAR DEPOIS
+    bool exibirTelaPreta = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,5 +36,39 @@ public class Controle : MonoBehaviour
         // Movimento mouse
         float mouseX = Input.GetAxis("Mouse X") * 10f;
         transform.Rotate(0, mouseX, 0);
+
+        // ============================================
+        // Funções exclusivas para testes! ==============
+
+        // Liga / Desliga a gravidade
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            gravidade = !gravidade;
+            rb.useGravity = gravidade;
+
+            if (gravidade)
+            {
+                Debug.Log("Gravidade: ON");
+            }
+            else
+            {
+                Debug.Log("Gravidade: OFF");
+            }
+        }
+
+        // Liga / Desliga tela preta de dialogo
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            exibirTelaPreta = !exibirTelaPreta;
+            EscurecerTela(exibirTelaPreta);
+        }
+
+        // ============================================
+        // ============================================
+    }
+
+    public void EscurecerTela(bool comando)
+    {
+        telaPreta.GetComponent<MeshRenderer>().enabled = comando;
     }
 }
