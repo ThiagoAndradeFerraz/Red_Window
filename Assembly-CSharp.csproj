@@ -73,7 +73,8 @@
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vExtensions.cs" />
     <Compile Include="Assets\Invector-3rdPersonController_LITE\Scripts\Generic\Utils\vPickupItem.cs" />
     <Compile Include="Assets\Scripts\Dados\ControleFluxo.cs" />
-    <Compile Include="Assets\Scripts\Objetos\Casa.cs" />
+    <Compile Include="Assets\Scripts\Objetos\Casa1.cs" />
+    <Compile Include="Assets\Scripts\Objetos\InterativoDialog.cs" />
     <Compile Include="Assets\Scripts\Player\CameraPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\ControlePlayer.cs" />
     <Compile Include="Assets\Scripts\Player1\Controle.cs" />

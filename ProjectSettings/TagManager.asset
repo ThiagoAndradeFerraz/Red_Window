@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Controle_Global
+  - txtAlerta
   layers:
   - Default
   - TransparentFX
