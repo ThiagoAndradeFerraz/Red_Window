@@ -7,6 +7,7 @@ public abstract class InterativoDialog : MonoBehaviour
 {
     protected GameObject playerObj;
     protected GameObject objControle;
+    protected GameObject gerenciadorDialogo;
     protected float distMin = 20.0f;
     protected GameObject txtAlertas;
 
@@ -42,7 +43,7 @@ public abstract class InterativoDialog : MonoBehaviour
             estdAgr = false;
             if (estdAgr != estdAntes)
             {
-                limpaTexto();
+                LimpaTexto();
                 estdAntes = estdAgr;
             }
         }
@@ -53,6 +54,7 @@ public abstract class InterativoDialog : MonoBehaviour
         playerObj = GameObject.FindGameObjectWithTag("Player");
         objControle = GameObject.FindGameObjectWithTag("Controle_Global");
         txtAlertas = GameObject.FindGameObjectWithTag("txtAlerta");
+        gerenciadorDialogo = GameObject.FindGameObjectWithTag("controle_dialogo");
     } 
 
 
@@ -61,10 +63,15 @@ public abstract class InterativoDialog : MonoBehaviour
         mensagem = texto;
     }
 
-    protected void limpaTexto()
+    protected void LimpaTexto()
     {
         txtAlertas.GetComponent<Text>().text = " ";
     }
 
     protected abstract void Interagir();
+
+    protected void ChamarGerenciador(TextAsset arquivo)
+    {
+        gerenciadorDialogo.GetComponent<GerenciadorDialogo>().LerDados(arquivo);
+    }
 }

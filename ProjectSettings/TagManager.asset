@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Controle_Global
   - txtAlerta
+  - txtNome
+  - txtFala
+  - imgRosto
+  - controle_dialogo
   layers:
   - Default
   - TransparentFX

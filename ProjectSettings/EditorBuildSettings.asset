@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ILHA.unity
+    guid: 3ae5c2d8eab5d9a4eb1c2f6359b7c7cd
   m_configObjects: {}
