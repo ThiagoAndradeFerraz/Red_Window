@@ -11,7 +11,7 @@ public class Casa1 : InterativoDialog
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            playerObj.GetComponent<Controle>().EscurecerTela(true);
+            //playerObj.GetComponent<Controle>().EscurecerTela(true);
             LimpaTexto();
             ChamarGerenciador(arqTexto1);
         }

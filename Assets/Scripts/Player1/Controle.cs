@@ -79,6 +79,7 @@ public class Controle : MonoBehaviour
     public void EscurecerTela(bool comando)
     {
         telaPreta.GetComponent<MeshRenderer>().enabled = comando;
-        pdMovimentar = false;
+
+        pdMovimentar = !comando;
     }
 }

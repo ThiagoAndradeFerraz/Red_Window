@@ -1,2 +1,2 @@
-﻿Hannah|Querido?
-Hannah|Por que voltou tão cedo?
+﻿Hannah|Querido?|0
+Hannah|Por que voltou tão cedo?|1

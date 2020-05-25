@@ -371,7 +371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NOME
+  m_Text: 
 --- !u!222 &143465174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1477,11 +1477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'dfdsfsdfdsfsad
-
-    dsfsdf
-
-    sdfsdfsdfsdgfdgfgfgfgf'
+  m_Text: 
 --- !u!222 &651342775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1911,7 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3255,6 +3251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f21e0dd881a6474dbea141f272c202d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rostos:
+  - {fileID: 21300000, guid: 0fa9834959c2e814086205e52afda07a, type: 3}
+  - {fileID: 21300000, guid: 4ca110962fad0204db2afd66ccf2516e, type: 3}
 --- !u!4 &1419002460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9023874195554780452, guid: e924fbe47c6240648b21dd2a48cc6fb9,

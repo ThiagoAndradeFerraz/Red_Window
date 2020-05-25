@@ -5,15 +5,25 @@ using UnityEngine.UI;
 
 public class GerenciadorDialogo : MonoBehaviour
 {
+    private GameObject player;
+
+
+    public List<Sprite> rostos = new List<Sprite>();
+
     protected Image imgRosto;
     protected Text txtNome;
     protected Text txtFala;
 
     protected string texto;
     protected string[] linhas;
+    protected string[] partes;
+    protected int cont;
 
+    protected string strNome;
+    protected string strFala;
+    protected int indexRosto;
 
-
+    bool dialogoIniciado = false;
 
 
     bool comando = true; // APAGAR
@@ -21,6 +31,8 @@ public class GerenciadorDialogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         imgRosto = GameObject.FindGameObjectWithTag("imgRosto").GetComponent<Image>();
         txtNome = GameObject.FindGameObjectWithTag("txtNome").GetComponent<Text>();
         txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
@@ -29,6 +41,18 @@ public class GerenciadorDialogo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (dialogoIniciado)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Iterar();
+            }
+        }
+
+
+
+
         // TESTE
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -53,29 +77,39 @@ public class GerenciadorDialogo : MonoBehaviour
     }
 
     public void LerDados(TextAsset arquivo)
-    {
-
+    { 
         texto = arquivo.text;
+        linhas = texto.Split('\n');
+        player.GetComponent<Controle>().EscurecerTela(true);
+        dialogoIniciado = true;
 
-        if (texto != null)
-        {
-            Debug.Log("carregou arquivo");
-        }
-        /*
-        // APENAS TESTE ---
-        Dialogo dadosDialog = new Dialogo();
-        dadosDialog.fala = "olá";
-        // ----------------
-        */
+        ExibirImagem(true);
+        Iterar();
     }
 
-    public void Iterar(Dialogo dadosDiag)
+    public void Iterar()
     {
-        
+        if(cont <= (linhas.Length - 1))
+        {
+            partes = linhas[cont].Split('|');
+            strNome = partes[0];
+            strFala = partes[1];
+            indexRosto = int.Parse(partes[2]);
+
+            txtNome.text = strNome;
+            txtFala.text = strFala;
+            imgRosto.sprite = rostos[indexRosto];
+
+            cont++;
+        }
+        else
+        {
+            ExibirImagem(false);
+            ApagaTexto();
+            dialogoIniciado = false;
+            player.GetComponent<Controle>().EscurecerTela(false);
+            Debug.Log("acabou");
+        }
+
     }
-
-
-
-
-
 }
