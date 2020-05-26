@@ -7,7 +7,6 @@ public class Controle : MonoBehaviour
     public GameObject telaPreta;
     Rigidbody rb;
     bool gravidade = true; // APAGAR DEPOIS
-    bool exibirTelaPreta = false;
     bool pdMovimentar = true;
 
     // Start is called before the first frame update
@@ -63,13 +62,6 @@ public class Controle : MonoBehaviour
             {
                 Debug.Log("Gravidade: OFF");
             }
-        }
-
-        // Liga / Desliga tela preta de dialogo
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            exibirTelaPreta = !exibirTelaPreta;
-            EscurecerTela(exibirTelaPreta);
         }
 
         // ============================================
