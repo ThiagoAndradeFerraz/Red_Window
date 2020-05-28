@@ -10,6 +10,7 @@ public abstract class InterativoDialog : MonoBehaviour
     protected GameObject gerenciadorDialogo;
     protected float distMin = 20.0f;
     protected GameObject txtAlertas;
+    protected GameObject gerenciadorGlobal;
 
     protected string mensagem;
     protected bool estdAgr = false;
@@ -55,6 +56,7 @@ public abstract class InterativoDialog : MonoBehaviour
         objControle = GameObject.FindGameObjectWithTag("Controle_Global");
         txtAlertas = GameObject.FindGameObjectWithTag("txtAlerta");
         gerenciadorDialogo = GameObject.FindGameObjectWithTag("controle_dialogo");
+        gerenciadorGlobal = GameObject.FindGameObjectWithTag("Controle_Global");
     } 
 
 

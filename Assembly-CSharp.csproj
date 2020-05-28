@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Genericos\Dialogo.cs" />
     <Compile Include="Assets\Scripts\Genericos\Rosto.cs" />
     <Compile Include="Assets\Scripts\Gerenciadores\GerenciadorDialogo.cs" />
+    <Compile Include="Assets\Scripts\Gerenciadores\GerenciadorGlobal.cs" />
     <Compile Include="Assets\Scripts\Minigames\Instanciador.cs" />
     <Compile Include="Assets\Scripts\Minigames\Peixe.cs" />
     <Compile Include="Assets\Scripts\Minigames\Pesca.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\Player1\Controle.cs" />
     <None Include="Assets\Dialogos\Testes\DIALOGO-TESTE.txt" />
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
+    <None Include="Assets\Pensamentos\pensamento1.txt" />
     <None Include="Assets\EscalatorPro\README.txt" />
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>C:/Users/thiag/Documents/RED_WINDOW/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>

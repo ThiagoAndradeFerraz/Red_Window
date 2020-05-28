@@ -104,6 +104,7 @@ public class GerenciadorDialogo : MonoBehaviour
         }
         else
         {
+            cont = 0;
             ExibirImagem(false);
             ApagaTexto();
             dialogoIniciado = false;

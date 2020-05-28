@@ -1,2 +1,9 @@
-﻿Hannah|Querido?|0
-Hannah|Por que voltou tão cedo?|1
+﻿Hannah|Ah... você voltou...|0
+Hannah|Onde foi? Fiquei preocupada|1
+Você|Eu não sei. Acordei no meio daquela floresta estranha.|1
+Hannah|Essa sua sonabolia me deixa preocupada...|1
+Hannah|Mas enfim... Precisamos encontrar alimento|0 
+Hannah|Pois nossos estoques estão pra acabar|0
+Hannah|Queria pode ter ajudar, mas a minha perna ainda não melhorou...|0
+Você|Relaxa, eu sei me cuidar. Vou ver o que encontro.|0
+Hannah|Por favor, não demore muito.|0

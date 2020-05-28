@@ -6,6 +6,8 @@ public class Casa1 : InterativoDialog
 {
     public TextAsset arqTexto1;
 
+    private bool conv1 = true;
+
     protected override void Interagir()
     {
         
@@ -13,7 +15,16 @@ public class Casa1 : InterativoDialog
         {
             //playerObj.GetComponent<Controle>().EscurecerTela(true);
             LimpaTexto();
+            SelecionarArquivo();
+        }
+    }
+
+    private void SelecionarArquivo()
+    {
+        if (conv1)
+        {
             ChamarGerenciador(arqTexto1);
+            conv1 = false;
         }
     }
 

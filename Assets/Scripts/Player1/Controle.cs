@@ -1,18 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controle : MonoBehaviour
 {
+    private GameObject gerenciadorGlobal;
+
+
     public GameObject telaPreta;
+    private Text txtFala;
     Rigidbody rb;
+
+    // Lanterna
+    private GameObject lanterna;
+    private bool lanternaStatus = false;
+
+    // Movimento
     bool gravidade = true; // APAGAR DEPOIS
     bool pdMovimentar = true;
+
+    // Pensamento
+    public TextAsset pensamento1;
+    private string texto;
+    private string[] linhas;
+    private int cont = 0;
+    private bool pensando = false; // FIQUE ATENTO A ISSO!!!
+
+    // Controle pensamentos
+    private bool pens1 = true;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
+        gerenciadorGlobal = GameObject.FindGameObjectWithTag("Controle_Global");
+        lanterna = GameObject.FindGameObjectWithTag("lanterna");
     }
 
     // Update is called once per frame
@@ -21,8 +47,17 @@ public class Controle : MonoBehaviour
         if (pdMovimentar)
         {
             Movimento();
+            ControlePensamentos();
         }
-        
+
+        // Iterando linhas de pensamento
+        if (pensando)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Iterar();
+            }
+        }
     }
 
     protected void Movimento()
@@ -44,6 +79,14 @@ public class Controle : MonoBehaviour
         // Movimento mouse
         float mouseX = Input.GetAxis("Mouse X") * 10f;
         transform.Rotate(0, mouseX, 0);
+
+        // Liga / Desliga lanterna 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            lanterna.GetComponent<Light>().enabled = lanternaStatus;
+            lanternaStatus = !lanternaStatus;
+        }
+
 
         // ============================================
         // Funções exclusivas para testes! ==============
@@ -74,4 +117,46 @@ public class Controle : MonoBehaviour
 
         pdMovimentar = !comando;
     }
+
+    // Funções usadas ao longo da história ------------
+    public void ExibirPensamento(TextAsset arquivo)
+    {
+        texto = arquivo.text;
+        linhas = texto.Split('\n');
+        Iterar();
+    }
+
+    private void LimparPensamento()
+    {
+        txtFala.text = " ";
+    }
+
+    private void Iterar()
+    {
+        if(cont <= (linhas.Length - 1))
+        {
+            txtFala.text = linhas[cont];
+            cont++;
+            pensando = true;
+            
+        }
+        else
+        {
+            cont = 0;
+            LimparPensamento();
+            gerenciadorGlobal.GetComponent<GerenciadorGlobal>().SetarObjetivo("volte para a nave");
+            pensando = false;
+        }
+    }
+
+    private void ControlePensamentos()
+    {
+        if (pens1)
+        {
+            ExibirPensamento(pensamento1);
+            pens1 = false;
+        }
+    }
+
+    // -----------------------------------------------
 }
