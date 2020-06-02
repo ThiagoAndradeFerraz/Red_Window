@@ -12,6 +12,8 @@ TagManager:
   - controle_dialogo
   - txtObjetivo
   - lanterna
+  - plataforma
+  - chao
   layers:
   - Default
   - TransparentFX

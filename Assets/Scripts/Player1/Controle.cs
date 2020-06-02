@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Controle : MonoBehaviour
 {
     private GameObject gerenciadorGlobal;
-
+    //private GameObject camera;
 
     public GameObject telaPreta;
     private Text txtFala;
     Rigidbody rb;
+    bool estaNoChao = true;
 
     // Lanterna
     private GameObject lanterna;
@@ -30,6 +31,33 @@ public class Controle : MonoBehaviour
     // Controle pensamentos
     private bool pens1 = true;
 
+    // Checa rampa
+    private float forcaInclinacao;
+    private float forcaInclinacaoRayLength;
+
+    private bool EmRampa()
+    {
+        if (!estaNoChao)
+            return false;
+        
+        RaycastHit hit;
+
+        if(Physics.Raycast(transform.position, Vector3.down, out hit, transform.lossyScale.y / 2 *
+                                                                        forcaInclinacaoRayLength))
+            if (hit.normal != Vector3.up)
+                return true;
+        return false;
+    }
+
+
+    // Checando se está no chão
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "chao")
+        {
+            estaNoChao = true;
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -39,6 +67,7 @@ public class Controle : MonoBehaviour
         txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
         gerenciadorGlobal = GameObject.FindGameObjectWithTag("Controle_Global");
         lanterna = GameObject.FindGameObjectWithTag("lanterna");
+        //camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -67,14 +96,21 @@ public class Controle : MonoBehaviour
         int velocidade = ((correndo) ? 20 : 10);
 
         // Pulo
+        /*
         bool pulou = Input.GetKey(KeyCode.Space);
-        int velocidadePulo = ((pulou) ? 10 : 0);
+        int velocidadePulo = ((pulou) ? 10 : 0);*/
+        if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
+        {
+            rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
+            estaNoChao = false;
+        }
+
 
         // Movimento WASD
         float x = Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
         float z = Input.GetAxis("Vertical") * velocidade * Time.deltaTime;
-        float y = velocidadePulo * Time.deltaTime;
-        transform.Translate(x, y, z);
+        //float y = velocidadePulo * Time.deltaTime;
+        transform.Translate(x, 0, z);
 
         // Movimento mouse
         float mouseX = Input.GetAxis("Mouse X") * 10f;
@@ -86,6 +122,16 @@ public class Controle : MonoBehaviour
             lanterna.GetComponent<Light>().enabled = lanternaStatus;
             lanternaStatus = !lanternaStatus;
         }
+
+
+        if((x != 0 || z != 0) && EmRampa())
+        {
+            transform.Translate(0, -(transform.lossyScale.y / 2 * forcaInclinacao 
+                * Time.deltaTime), 0);
+        }
+
+
+
 
 
         // ============================================

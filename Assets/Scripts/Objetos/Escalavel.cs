@@ -7,10 +7,13 @@ public class Escalavel : MonoBehaviour
 {
     private GameObject player;
     private Text txtAlerta;
-    private float distMin = 26.0f;
+    private float distMin = 80.0f;
     private bool estdAgr = false;
     private bool estdAntes = true;
     private string mensagem = "[E] - ESCALAR";
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,10 @@ public class Escalavel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Distancia: " + Vector3.Distance(this.transform.position, player.transform.position));
+
+
+
         DetectarPLayer();
     }
 
@@ -29,7 +36,7 @@ public class Escalavel : MonoBehaviour
     {
         if (Vector3.Distance(this.transform.position, player.transform.position) < distMin)
         {
-            Debug.Log("perto");
+            //Debug.Log("perto");
             estdAgr = true;
             if (estdAgr != estdAntes)
             {
@@ -42,7 +49,7 @@ public class Escalavel : MonoBehaviour
         }
         else
         {
-            Debug.Log("longe");
+            //Debug.Log("longe");
             estdAgr = false;
             if (estdAgr != estdAntes)
             {
@@ -56,6 +63,7 @@ public class Escalavel : MonoBehaviour
     {
         txtAlerta.text = " ";
     }
+
 
 
 }

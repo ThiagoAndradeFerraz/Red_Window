@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Player\CameraPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\ControlePlayer.cs" />
     <Compile Include="Assets\Scripts\Player1\Controle.cs" />
+    <Compile Include="Assets\Scripts\Player1\ControleSC.cs" />
     <None Include="Assets\Dialogos\Testes\DIALOGO-TESTE.txt" />
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
     <None Include="Assets\Pensamentos\pensamento1.txt" />
