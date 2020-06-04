@@ -31,23 +31,11 @@ public class Controle : MonoBehaviour
     // Controle pensamentos
     private bool pens1 = true;
 
-    // Checa rampa
-    private float forcaInclinacao;
-    private float forcaInclinacaoRayLength;
 
-    private bool EmRampa()
-    {
-        if (!estaNoChao)
-            return false;
-        
-        RaycastHit hit;
+    // Pausa
+    public bool estaPausado = false;
 
-        if(Physics.Raycast(transform.position, Vector3.down, out hit, transform.lossyScale.y / 2 *
-                                                                        forcaInclinacaoRayLength))
-            if (hit.normal != Vector3.up)
-                return true;
-        return false;
-    }
+    
 
 
     // Checando se está no chão
@@ -87,6 +75,8 @@ public class Controle : MonoBehaviour
                 Iterar();
             }
         }
+
+        Pausar();
     }
 
     protected void Movimento()
@@ -112,9 +102,10 @@ public class Controle : MonoBehaviour
         //float y = velocidadePulo * Time.deltaTime;
         transform.Translate(x, 0, z);
 
-        // Movimento mouse
-        float mouseX = Input.GetAxis("Mouse X") * 10f;
+        // Movimento mouse --------------------------------
+        float mouseX = ((estaPausado) ? 0 : (Input.GetAxis("Mouse X") * 10f));
         transform.Rotate(0, mouseX, 0);
+        
 
         // Liga / Desliga lanterna 
         if (Input.GetKeyDown(KeyCode.H))
@@ -124,11 +115,7 @@ public class Controle : MonoBehaviour
         }
 
 
-        if((x != 0 || z != 0) && EmRampa())
-        {
-            transform.Translate(0, -(transform.lossyScale.y / 2 * forcaInclinacao 
-                * Time.deltaTime), 0);
-        }
+        
 
 
 
@@ -164,6 +151,28 @@ public class Controle : MonoBehaviour
         pdMovimentar = !comando;
     }
 
+    // Pausa
+    private void Pausar()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (estaPausado)
+            {
+                Time.timeScale = 1;
+                EscurecerTela(false); // PODE CAUSAR BUG, CUIDADO!!!!!!
+                txtFala.enabled = true;
+                estaPausado = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                EscurecerTela(true);
+                txtFala.enabled = false;
+                estaPausado = true;
+            }
+        }
+    }
+
     // Funções usadas ao longo da história ------------
     public void ExibirPensamento(TextAsset arquivo)
     {
@@ -179,20 +188,24 @@ public class Controle : MonoBehaviour
 
     private void Iterar()
     {
-        if(cont <= (linhas.Length - 1))
+        if (!estaPausado)
         {
-            txtFala.text = linhas[cont];
-            cont++;
-            pensando = true;
-            
+            if (cont <= (linhas.Length - 1))
+            {
+                txtFala.text = linhas[cont];
+                cont++;
+                pensando = true;
+
+            }
+            else
+            {
+                cont = 0;
+                LimparPensamento();
+                //gerenciadorGlobal.GetComponent<GerenciadorGlobal>().SetarObjetivo("volte para a nave");
+                pensando = false;
+            }
         }
-        else
-        {
-            cont = 0;
-            LimparPensamento();
-            gerenciadorGlobal.GetComponent<GerenciadorGlobal>().SetarObjetivo("volte para a nave");
-            pensando = false;
-        }
+        
     }
 
     private void ControlePensamentos()

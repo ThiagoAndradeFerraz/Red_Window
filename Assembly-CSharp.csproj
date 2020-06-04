@@ -73,8 +73,10 @@
     <Compile Include="Assets\Scripts\Minigames\Instanciador.cs" />
     <Compile Include="Assets\Scripts\Minigames\Peixe.cs" />
     <Compile Include="Assets\Scripts\Minigames\Pesca.cs" />
+    <Compile Include="Assets\Scripts\Objetos\Apple.cs" />
     <Compile Include="Assets\Scripts\Objetos\Casa1.cs" />
     <Compile Include="Assets\Scripts\Objetos\Escalavel.cs" />
+    <Compile Include="Assets\Scripts\Objetos\Fruta.cs" />
     <Compile Include="Assets\Scripts\Objetos\InterativoDialog.cs" />
     <Compile Include="Assets\Scripts\Player\CameraPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\ControlePlayer.cs" />

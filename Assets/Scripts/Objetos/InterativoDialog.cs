@@ -27,12 +27,15 @@ public abstract class InterativoDialog : MonoBehaviour
 
     protected void DetectarPlayer()
     {
+        
+
         if (Vector3.Distance(this.transform.position, playerObj.transform.position) < distMin)
         {
             estdAgr = true;
+           
             if (estdAgr != estdAntes)
             {
-                
+                       
                 txtAlertas.GetComponent<Text>().text = mensagem;
                 estdAntes = estdAgr;
                 Interagir();
@@ -44,6 +47,7 @@ public abstract class InterativoDialog : MonoBehaviour
             estdAgr = false;
             if (estdAgr != estdAntes)
             {
+                
                 LimpaTexto();
                 estdAntes = estdAgr;
             }

@@ -30,6 +30,8 @@ public class Casa1 : InterativoDialog
 
     private void Start()
     {
+        //distMin = 100f;
+
         setarObjetos();
         setTexto("[E] - Entrar");
     }

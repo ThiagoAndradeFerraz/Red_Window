@@ -9,7 +9,7 @@ public class ControleSC : MonoBehaviour
     bool viradoDireita = true;
     bool estaNoChao = false;
     Rigidbody rb;
-    bool ligouGrav = false;
+    //bool ligouGrav = false;
 
     // Start is called before the first frame update
     void Start()
@@ -70,19 +70,10 @@ public class ControleSC : MonoBehaviour
         if(collision.gameObject.tag == "plataforma")
         {
             estaNoChao = true;
-            ligouGrav = true;
+            //ligouGrav = true;
         }
     }
 
-    private void Caindo()
-    {
-        if (!estaNoChao && ligouGrav)
-        {
-            rb.AddForce(new Vector3(0, -5, 0), ForceMode.Impulse);
-            ligouGrav = false;
-        }
-    }
-
-
+    
 
 }
