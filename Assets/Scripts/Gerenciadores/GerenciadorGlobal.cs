@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GerenciadorGlobal : MonoBehaviour
 {
     private GameObject player;
+    private GameObject npc; 
     private Text txtObjt;
 
     // Objetivos ---
@@ -14,8 +15,11 @@ public class GerenciadorGlobal : MonoBehaviour
 
     // Itens ----------------
     // Objetivo1
+    public bool dialog1Concluido = false;
     public int qtdFrutas = 0;
     public bool pegouFruta = false;
+
+
 
 
     // Start is called before the first frame update
@@ -23,7 +27,7 @@ public class GerenciadorGlobal : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         txtObjt = GameObject.FindGameObjectWithTag("txtObjetivo").GetComponent<Text>();
-
+        npc = GameObject.FindGameObjectWithTag("casa1");
     }
 
     // Update is called once per frame
@@ -70,6 +74,13 @@ public class GerenciadorGlobal : MonoBehaviour
     // Script do objetivo1... =====================================
     private void Objetivo1()
     {
+        // Chama cena de dialogo...
+        
+
+
+        // ------------------------
+
+
         string texto1 = "Nossos suprimentos estão ficando escassos. Preciso encontrar algo que possamos comer.";
         SetarObjetivoTxt(PorAspas(texto1));
     }
@@ -81,6 +92,9 @@ public class GerenciadorGlobal : MonoBehaviour
         // Checa se o objetivo foi concluido...
         if(qtdFrutas > 2 && pegouFruta)
         {
+            // Atualizando o idConversa usado para gerir os textos da NPC...
+            npc.GetComponent<Casa1>().idConversa = 3;
+
             // Indo para o objetivo2...
             idObjetivo = 1;
             ChecarObjetivo();

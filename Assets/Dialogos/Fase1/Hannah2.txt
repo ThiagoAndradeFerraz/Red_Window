@@ -1,0 +1,3 @@
+﻿Hannah|Você voltou|0
+Hannah|Trouxe alguma coisa?|1
+Hannah|Não? Então vai atrás se não a gente morre de fome!|0

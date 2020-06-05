@@ -23,7 +23,7 @@ public class GerenciadorDialogo : MonoBehaviour
     protected string strFala;
     protected int indexRosto;
 
-    bool dialogoIniciado = false;
+    public bool dialogoIniciado = false;
 
 
     bool comando = true; // APAGAR
@@ -44,6 +44,8 @@ public class GerenciadorDialogo : MonoBehaviour
 
         if (dialogoIniciado)
         {
+
+
             if (Input.GetMouseButtonDown(0))
             {
                 Iterar();
@@ -113,4 +115,12 @@ public class GerenciadorDialogo : MonoBehaviour
         }
 
     }
+
+
+    // Cuidando dos botões...
+
+
+    // ----------------------
+
+
 }

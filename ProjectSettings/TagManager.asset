@@ -15,6 +15,10 @@ TagManager:
   - plataforma
   - chao
   - apple
+  - txtPensamento
+  - casa1
+  - btnSim
+  - btnNao
   layers:
   - Default
   - TransparentFX

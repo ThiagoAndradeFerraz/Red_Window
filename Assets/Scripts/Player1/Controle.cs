@@ -31,6 +31,8 @@ public class Controle : MonoBehaviour
     // Controle pensamentos
     private bool pens1 = true;
 
+    // Dialogo
+    private GameObject gerenciadorDialogo;
 
     // Pausa
     public bool estaPausado = false;
@@ -52,9 +54,10 @@ public class Controle : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
+        txtFala = GameObject.FindGameObjectWithTag("txtPensamento").GetComponent<Text>();
         gerenciadorGlobal = GameObject.FindGameObjectWithTag("Controle_Global");
         lanterna = GameObject.FindGameObjectWithTag("lanterna");
+        gerenciadorDialogo = GameObject.FindGameObjectWithTag("controle_dialogo");
         //camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
@@ -64,9 +67,17 @@ public class Controle : MonoBehaviour
         if (pdMovimentar)
         {
             Movimento();
-            ControlePensamentos();
+
+            /*
+            // Caso não esteja em uma cena de dialogo...
+            if (gerenciadorGlobal.GetComponent<GerenciadorGlobal>().dialog1Concluido)
+            {
+                ControlePensamentos();
+            }*/
+            
         }
 
+        /*
         // Iterando linhas de pensamento
         if (pensando)
         {
@@ -74,9 +85,13 @@ public class Controle : MonoBehaviour
             {
                 Iterar();
             }
-        }
+        }*/
 
-        Pausar();
+        if (!gerenciadorDialogo.GetComponent<GerenciadorDialogo>().dialogoIniciado)
+        {
+            Pausar();
+        }
+         
     }
 
     protected void Movimento()
