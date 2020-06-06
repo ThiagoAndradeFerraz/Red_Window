@@ -8,8 +8,10 @@ public class Casa1 : InterativoDialog
     public TextAsset arqTexto2;
     public TextAsset arqTexto3;
 
-    private bool conv1 = true; // Inicio do jogo
-    private bool conv2 = false; // Quando volta pra casa antes de completar o objt2
+    public TextAsset arqTextoN1;
+    public TextAsset arqTextoS1;
+
+    public bool escolha1;
     
     public int idConversa = 1;
 
@@ -24,7 +26,7 @@ public class Casa1 : InterativoDialog
         }
     }
 
-    private void SelecionarArquivo()
+    public void SelecionarArquivo()
     {
 
         switch (idConversa)
@@ -44,11 +46,21 @@ public class Casa1 : InterativoDialog
             case 3:
                 // Quando o objetivo de trazer frutas é cumprido...
                 ChamarGerenciador(arqTexto3);
+                // OBSERVAÇÃO: idConversa é setado como 4 pelo GerenciadorDialogo!
                 break;
-
+                // ==========================
             case 4:
-                //
+                // Depois da escolha, iniciar sonho dependendo da resposta...
+                if (escolha1)
+                {
+                    ChamarGerenciador(arqTextoS1);
+                }
+                else
+                {
+                    ChamarGerenciador(arqTextoN1);
+                }
                 break;
+                // ==========================
         }
 
 

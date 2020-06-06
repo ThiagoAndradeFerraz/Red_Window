@@ -1579,13 +1579,14 @@ GameObject:
   - component: {fileID: 662672738}
   - component: {fileID: 662672737}
   - component: {fileID: 662672736}
+  - component: {fileID: 662672739}
   m_Layer: 5
-  m_Name: BtnNao
-  m_TagString: btnNao
+  m_Name: BtnSim
+  m_TagString: btnSim
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &662672735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1603,7 +1604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -162}
+  m_AnchoredPosition: {x: 0, y: -96}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662672736
@@ -1648,7 +1649,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 662672737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 662672739}
+        m_MethodName: RetornarValor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &662672737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,6 +1697,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662672734}
   m_CullTransparentMesh: 0
+--- !u!114 &662672739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662672734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405bb0f76bbe89b4aa242c77a79a802f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnTipo: 0
 --- !u!1 &675227795
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,7 +2676,7 @@ RectTransform:
   m_GameObject: {fileID: 1079865068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73935, y: 0.73935, z: 0.73935}
   m_Children: []
   m_Father: {fileID: 1418588672}
   m_RootOrder: 0
@@ -2681,10 +2706,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2692,7 +2717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sim.
+  m_Text: "N\xC3O"
 --- !u!222 &1079865071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3449,6 +3474,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0fa9834959c2e814086205e52afda07a, type: 3}
   - {fileID: 21300000, guid: 4ca110962fad0204db2afd66ccf2516e, type: 3}
   dialogoIniciado: 0
+  btnSim: {fileID: 662672734}
+  btnNao: {fileID: 1418588671}
+  retornoBtn: 0
 --- !u!1 &1418588671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,13 +3489,14 @@ GameObject:
   - component: {fileID: 1418588675}
   - component: {fileID: 1418588674}
   - component: {fileID: 1418588673}
+  - component: {fileID: 1418588676}
   m_Layer: 5
-  m_Name: BtnSim
-  m_TagString: btnSim
+  m_Name: BtnNao
+  m_TagString: btnNao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1418588672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3485,7 +3514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -205}
+  m_AnchoredPosition: {x: 0, y: -139}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1418588673
@@ -3530,7 +3559,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418588674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1418588676}
+        m_MethodName: RetornarValor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418588674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3567,6 +3607,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418588671}
   m_CullTransparentMesh: 0
+--- !u!114 &1418588676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418588671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405bb0f76bbe89b4aa242c77a79a802f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnTipo: 0
 --- !u!1 &1422117288
 GameObject:
   m_ObjectHideFlags: 0
@@ -4625,6 +4678,8 @@ MonoBehaviour:
   arqTexto1: {fileID: 4900000, guid: fc2bef94ce43c2441a26a9f4c6092feb, type: 3}
   arqTexto2: {fileID: 4900000, guid: 4ecba37cce6bd23498e81a59cec324f1, type: 3}
   arqTexto3: {fileID: 4900000, guid: 270febb815bcfe34a974315d0cf101d6, type: 3}
+  arqTextoN1: {fileID: 4900000, guid: a39d6c4d6e0e6d84bbdbe681d7f297b2, type: 3}
+  arqTextoS1: {fileID: 4900000, guid: 754685a75f988e04685f080396881145, type: 3}
   idConversa: 1
 --- !u!1 &1667729375
 GameObject:
@@ -5412,7 +5467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "N\xE3o"
+  m_Text: SIM
 --- !u!222 &1855990793
 CanvasRenderer:
   m_ObjectHideFlags: 0

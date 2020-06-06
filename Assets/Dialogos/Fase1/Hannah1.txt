@@ -1,2 +1,2 @@
-﻿Hannah|Acorda!|0
-Hannah|Vá buscar alguma coisa pra comer!|1
+﻿Hannah|Acorda!|0|N
+Hannah|Vá buscar alguma coisa pra comer!|1|N

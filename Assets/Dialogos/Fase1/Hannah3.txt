@@ -1,3 +1,3 @@
-﻿Hannah|Você voltou!|0
-Você|Sim, e trouxe algums frutas|1
-Hannah|Vejo que trouxe uma maça. Posso comer ela?|0
+﻿Hannah|Você voltou!|0|N
+Você|Sim, e trouxe algums frutas|1|N
+Hannah|Vejo que trouxe uma maça. Posso comer ela?|0|E
