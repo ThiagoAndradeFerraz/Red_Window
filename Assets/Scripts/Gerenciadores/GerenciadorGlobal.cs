@@ -20,6 +20,11 @@ public class GerenciadorGlobal : MonoBehaviour
     public bool pegouFruta = false;
 
 
+    // ----------------------
+    public bool frascoDeSangue = false; 
+    // OBS: 'frascoDeSangue' pode ser usado como checkpoint de debug para testar o gameplay bruto pós
+    //      dialogos iniciais!
+
 
 
     // Start is called before the first frame update

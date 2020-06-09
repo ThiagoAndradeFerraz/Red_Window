@@ -19,6 +19,7 @@ TagManager:
   - casa1
   - btnSim
   - btnNao
+  - ponte
   layers:
   - Default
   - TransparentFX

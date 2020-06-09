@@ -43,7 +43,7 @@ public class Controle : MonoBehaviour
     // Checando se está no chão
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "chao")
+        if (collision.gameObject.tag == "chao" || collision.gameObject.tag == "ponte")
         {
             estaNoChao = true;
         }

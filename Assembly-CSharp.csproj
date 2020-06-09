@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Gerenciadores\GerenciadorDialogo.cs" />
     <Compile Include="Assets\Scripts\Gerenciadores\GerenciadorGlobal.cs" />
     <Compile Include="Assets\Scripts\Minigames\Instanciador.cs" />
+    <Compile Include="Assets\Scripts\Minigames\Monolito.cs" />
     <Compile Include="Assets\Scripts\Minigames\Peixe.cs" />
     <Compile Include="Assets\Scripts\Minigames\Pesca.cs" />
     <Compile Include="Assets\Scripts\Objetos\Apple.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\Player1\ControleSC.cs" />
     <None Include="Assets\Dialogos\Fase1\Hannah4-N.txt" />
     <None Include="Assets\Dialogos\Testes\DIALOGO-TESTE.txt" />
+    <None Include="Assets\Dialogos\Fase1\MonolitoPH.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah4-S.txt" />
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah3.txt" />

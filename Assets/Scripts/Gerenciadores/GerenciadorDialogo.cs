@@ -8,7 +8,15 @@ public class GerenciadorDialogo : MonoBehaviour
     private GameObject player;
 
 
+    // ****************************************************
     public List<Sprite> rostos = new List<Sprite>();
+    // FASE 1 ---------------
+    // 0 -> NPC-ROSTO1;
+    // 1 -> NPC-ROSTO2;
+    // 2 -> CENA-MONOLITO;
+    // ----------------------
+    // ****************************************************
+
 
     protected Image imgRosto;
     protected Text txtNome;
@@ -180,8 +188,8 @@ public class GerenciadorDialogo : MonoBehaviour
         {
             case 3:
                 // Atualizando a idConversa
-                casa1.GetComponent<Casa1>().idConversa = 4;
-                casa1.GetComponent<Casa1>().escolha1 = resposta;
+                casa1.GetComponent<Casa1>().idConversa++; // Icrementando id da próxima conversa...
+                casa1.GetComponent<Casa1>().escolha1 = resposta; // Salvando a resposta...
                 casa1.GetComponent<Casa1>().SelecionarArquivo();
 
                 break;

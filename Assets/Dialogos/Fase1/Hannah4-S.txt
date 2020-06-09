@@ -1,2 +1,3 @@
 ﻿Hannah|Obrigada!|0|N
 Hannah|Vamos dormir.|1|N
+Hannah|Vai explorar ou eu me mato! Tive uns sonhos doido!|0|N
