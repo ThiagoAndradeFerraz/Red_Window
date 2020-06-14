@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\EscalatorPro\Script\Runtime\EscalatorPro.cs" />
     <Compile Include="Assets\EscalatorPro\Script\Runtime\Stair.cs" />
+    <Compile Include="Assets\Scripts VN\ControleDialogo.cs" />
     <Compile Include="Assets\Scripts\Dados\ControleFluxo.cs" />
     <Compile Include="Assets\Scripts\Genericos\BotaoEscolha.cs" />
     <Compile Include="Assets\Scripts\Genericos\Dialogo.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\Player\ControlePlayer.cs" />
     <Compile Include="Assets\Scripts\Player1\Controle.cs" />
     <Compile Include="Assets\Scripts\Player1\ControleSC.cs" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\Valquiria1.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah4-N.txt" />
     <None Include="Assets\Dialogos\Testes\DIALOGO-TESTE.txt" />
     <None Include="Assets\Dialogos\Fase1\MonolitoPH.txt" />

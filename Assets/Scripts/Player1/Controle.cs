@@ -37,8 +37,9 @@ public class Controle : MonoBehaviour
     // Pausa
     public bool estaPausado = false;
 
-    
 
+    // Propulsor
+    private float contadorTempo = 0f;
 
     // Checando se está no chão
     private void OnCollisionEnter(Collision collision)

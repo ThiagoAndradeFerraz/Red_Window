@@ -1,0 +1,2 @@
+﻿Valquiria|Ei, acorda!|Neutro|0
+Valquiria|Precisamos comer alguma coisa, nossos estoques acabaram.|Neutro|0

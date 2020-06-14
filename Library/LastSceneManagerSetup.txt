@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/ILHA.unity
+- path: Assets/Scenes/Segmento 1/2 - Planeta/1 - Animacao.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
