@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Segmento 1/2 - Planeta/1 - Animacao.unity
+- path: Assets/Scenes/Segmento 1/2 - Planeta/GAMEPLAY.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

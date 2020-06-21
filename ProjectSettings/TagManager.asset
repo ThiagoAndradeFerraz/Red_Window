@@ -20,6 +20,11 @@ TagManager:
   - btnSim
   - btnNao
   - ponte
+  - txtSim
+  - txtNao
+  - controle_roteiro
+  - controle_escolhas
+  - controle_global
   layers:
   - Default
   - TransparentFX
