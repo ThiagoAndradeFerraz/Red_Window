@@ -8,7 +8,7 @@ public class ControleThirdPerson : MonoBehaviour
 {
     // CONTROLE
     public CharacterController controle;
-    private float speed = 20f;
+    private float speed = 5f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public Transform cam;
@@ -41,12 +41,12 @@ public class ControleThirdPerson : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             if (Input.GetKey(KeyCode.LeftShift)){
-                speed = 70f;
+                speed = 12f;
                 velocidadeAnim = 1;
             }
             else
             {
-                speed = 20f;
+                speed = 5f;
                 velocidadeAnim = 0.5f;
             }
 

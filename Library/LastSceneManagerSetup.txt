@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Segmento 1/2 - Planeta/GAMEPLAY.unity
+- path: Assets/Scenes/FASES/1 - ESCOLA.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
