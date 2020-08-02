@@ -1,80 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3948973485501457956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3948973485501457957}
-  - component: {fileID: 3948973485501457955}
-  - component: {fileID: 3948973485501457954}
-  m_Layer: 0
-  m_Name: Cassia (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3948973485501457957
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948973485501457956}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 361, y: 22.1, z: 490.03}
-  m_LocalScale: {x: 11.784247, y: 11.784247, z: 11.784247}
-  m_Children:
-  - {fileID: 3550854157874434862}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3948973485501457955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948973485501457956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb365cae92eb567488a50566ddddcfcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controle: {fileID: 3948973485501457954}
-  turnSmoothTime: 0.1
-  cam: {fileID: 0}
-  anim: {fileID: 3948973485897800335}
---- !u!143 &3948973485501457954
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948973485501457956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2.31
-  m_Radius: 0.44
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.73, z: 0}
---- !u!95 &3948973485897800335
+--- !u!95 &7986443015755620726
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4182994850811169172}
+  m_GameObject: {fileID: 7067522523256058477}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c1d0fb3fab664174388862551b04b97a, type: 3}
   m_Controller: {fileID: 9100000, guid: 76e32ee71989c3448b7b5fec83b8db0e, type: 2}
@@ -86,12 +19,79 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &3948973485521269957
+--- !u!1 &7986443015363010013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7986443015363010012}
+  - component: {fileID: 7986443015363010010}
+  - component: {fileID: 7986443015363010011}
+  m_Layer: 0
+  m_Name: Cassia (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7986443015363010012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986443015363010013}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 423.7, y: 2.49, z: 703}
+  m_LocalScale: {x: 1.3409295, y: 1.3409295, z: 1.3409295}
+  m_Children:
+  - {fileID: 7592843463315400919}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7986443015363010010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986443015363010013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb365cae92eb567488a50566ddddcfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controle: {fileID: 7986443015363010011}
+  turnSmoothTime: 0.1
+  cam: {fileID: 0}
+  anim: {fileID: 7986443015755620726}
+--- !u!143 &7986443015363010011
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986443015363010013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.31
+  m_Radius: 0.44
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -0.73, z: 0}
+--- !u!1001 &7986443015347687228
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3948973485501457957}
+    m_TransformParent: {fileID: 7986443015363010012}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1d0fb3fab664174388862551b04b97a,
         type: 3}
@@ -211,15 +211,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3042453150c5b4c46bbb8da314944e8c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1d0fb3fab664174388862551b04b97a, type: 3}
---- !u!1 &4182994850811169172 stripped
+--- !u!1 &7067522523256058477 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1d0fb3fab664174388862551b04b97a,
     type: 3}
-  m_PrefabInstance: {fileID: 3948973485521269957}
+  m_PrefabInstance: {fileID: 7986443015347687228}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3550854157874434862 stripped
+--- !u!4 &7592843463315400919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1d0fb3fab664174388862551b04b97a,
     type: 3}
-  m_PrefabInstance: {fileID: 3948973485521269957}
+  m_PrefabInstance: {fileID: 7986443015347687228}
   m_PrefabAsset: {fileID: 0}
