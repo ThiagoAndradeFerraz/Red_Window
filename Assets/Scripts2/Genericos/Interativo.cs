@@ -20,9 +20,9 @@ public abstract class Interativo : MonoBehaviour
     //*********************************************************
 
     // Caracteristicas do objeto...
-    public string strNome;
-    public string strInteracao;
-    public string strInteracao2;
+    protected string strNome;
+    protected string strInteracao;
+    protected string strInteracao2;
 
     /*
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public abstract class Interativo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetectarPlayer();
+        //DetectarPlayer();
     }
 
     protected void DetectarPlayer()
@@ -75,11 +75,11 @@ public abstract class Interativo : MonoBehaviour
         // Teste em debug...
         if (strInteracao2 == null || strInteracao2 == "")
         {
-            Debug.Log("nulo" + strNome + " - " + "[E] " + strInteracao);
+            Debug.Log(strNome + " - " + "[E] " + strInteracao); // TROCAR POR UI
         }
         else
         {
-            Debug.Log("nao nulo" + strNome + " - " + "[E] " + strInteracao + " | " + "[R]" + strInteracao2);
+            Debug.Log(strNome + " - " + "[E] " + strInteracao + " | " + "[R]" + strInteracao2); // TROCAR POR UI
         }
     }
 
@@ -87,16 +87,12 @@ public abstract class Interativo : MonoBehaviour
     {
         // Checando qual foi a interação selecionada pelo player...
 
-        //Debug.Log("checou");
-
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("apertou E");
             Interagir1();
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("apertou R");
             Interagir2();
         }
     }
