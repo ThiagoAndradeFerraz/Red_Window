@@ -25,6 +25,9 @@ TagManager:
   - controle_roteiro
   - controle_escolhas
   - controle_global
+  - painel_intrc
+  - txtIntrc1
+  - txtIntrc2
   layers:
   - Default
   - TransparentFX

@@ -117,7 +117,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 8634
+  controlID: 12349
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 8557
+  controlID: 12248
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 562, y: 179}
+  m_TargetSize: {x: 318, y: 179}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -316,14 +316,14 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -281
-    m_HBaseRangeMax: 281
+    m_HBaseRangeMin: -159
+    m_HBaseRangeMax: 159
     m_VBaseRangeMin: -89.5
     m_VBaseRangeMax: 89.5
     m_HAllowExceedBaseRangeMin: 1
@@ -401,9 +401,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 295.2871, y: 376.20605, z: 29.172852}
+    m_Target: {x: 309.35846, y: 375.53, z: 20.913868}
     speed: 2
-    m_Value: {x: 295.2871, y: 376.20605, z: 29.172852}
+    m_Value: {x: 309.35846, y: 375.53, z: 20.913868}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -449,13 +449,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.15723714, y: -0.8353689, z: 0.30673602, w: -0.42824346}
+    m_Target: {x: 0.15164174, y: 0.16814113, z: -0.02618647, w: 0.97367823}
     speed: 2
-    m_Value: {x: 0.15723714, y: 0.8353689, z: -0.30673602, w: 0.4282435}
+    m_Value: {x: -0.15164174, y: -0.16814113, z: 0.02618647, w: -0.97367823}
   m_Size:
-    m_Target: 12.576893
+    m_Target: 23.109034
     speed: 2
-    m_Value: 12.576893
+    m_Value: 23.109034
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e43e0000
-      m_LastClickedID: 16100
-      m_ExpandedIDs: 3efbfffff4ffffff283e0000283f0000
+      m_SelectedIDs: 283e0000
+      m_LastClickedID: 15912
+      m_ExpandedIDs: 64f1ffffd4f6ffff3efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -574,20 +574,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts2/Objetos
+    - Assets/Scripts/Player1
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts2/Objetos
+  - Assets/Scripts/Player1
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\thiag\OneDrive\Documentos\RED_WINDOW\Red_Window
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0c430000
-    m_LastClickedID: 17164
-    m_ExpandedIDs: 00000000b2420000b4420000b6420000b8420000ba420000bc420000be42000000ca9a3b
+    m_SelectedIDs: 06460000
+    m_LastClickedID: 17926
+    m_ExpandedIDs: 00000000b4420000b6420000b8420000ba420000bc420000be420000c04200000643000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,7 +615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b2420000b4420000b6420000b8420000ba420000bc420000be42000000ca9a3b
+    m_ExpandedIDs: 00000000b4420000b6420000b8420000ba420000bc420000be420000c04200000643000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

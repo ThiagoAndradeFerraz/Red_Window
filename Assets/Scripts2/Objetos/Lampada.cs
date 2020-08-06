@@ -17,8 +17,7 @@ public class Lampada : Interativo
 
         distMin = 3;
         strNome = "Lampada";
-        strInteracao = "Ligar / Desligar";
-        strInteracao2 = "Colocar / Tirar";
+        DefinirInteracoes();
     }
 
     private void Update()
@@ -50,7 +49,6 @@ public class Lampada : Interativo
             {
                 Debug.Log("droga, tá faltando uma lampada aqui!");
             }
-            
         }
     }
 
@@ -90,6 +88,15 @@ public class Lampada : Interativo
             Debug.Log("estou sem lampadas...");
         }
     }
+
+    protected override void DefinirInteracoes()
+    {
+        // Define as interações...
+
+        strInteracao = ligada ? "[E] - Desligar" : "[E] - Ligar";
+        strInteracao2 = funcionando ? "[E] - Tirar lampada" : "[R] - Botar lampada";
+    }
+
 
     protected void EncontrarLampadaFilha()
     {
