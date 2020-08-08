@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Player1\Controle.cs" />
     <Compile Include="Assets\Scripts\Player1\ControleSC.cs" />
     <Compile Include="Assets\Scripts2\Fluxo\GerenciadorInvt.cs" />
+    <Compile Include="Assets\Scripts2\Genericos\DialogModel.cs" />
     <Compile Include="Assets\Scripts2\Genericos\Interativo.cs" />
     <Compile Include="Assets\Scripts2\Genericos\Objeto.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Lampada.cs" />
@@ -102,6 +103,7 @@
     <None Include="Assets\Dialogos\Fase1\Hannah4-S.txt" />
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah3.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Lampada\no-lamp1.txt" />
     <None Include="Assets\Pensamentos\pensamento1.txt" />
     <None Include="Assets\EscalatorPro\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah1.txt" />

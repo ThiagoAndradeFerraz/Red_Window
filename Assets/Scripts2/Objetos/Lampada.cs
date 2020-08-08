@@ -23,7 +23,7 @@ public class Lampada : Interativo
     private void Update()
     {
         DetectarPlayer();
-        
+        AvancarTexto();
     }
 
     private void LigaDesliga()
@@ -43,11 +43,12 @@ public class Lampada : Interativo
         {
             if(GerenciadorInvt.Instancia.contLampadas > 0)
             {
-                Debug.Log("Preciso por uma lampada!");
+                IniciarDialogo("OBJETOS/Lampada/no-lamp1");
             }
             else
             {
-                Debug.Log("droga, tá faltando uma lampada aqui!");
+                IniciarDialogo("OBJETOS/Lampada/no-lamp1");
+                //PreencherUIfala1("droga, tá faltando uma lampada aqui!");
             }
         }
     }
@@ -68,7 +69,7 @@ public class Lampada : Interativo
     {
         // Tirando o objeto da lampada do suporte...
         GerenciadorInvt.Instancia.contLampadas++; // Adicionado +1 de lampadas para o inventário...
-        ligada = false;
+        //ligada = false;
         objetoLuz.GetComponent<Light>().enabled = false;
         funcionando = false;
     }
@@ -79,8 +80,8 @@ public class Lampada : Interativo
         if(GerenciadorInvt.Instancia.contLampadas > 0)
         {
             GerenciadorInvt.Instancia.contLampadas--;
-            ligada = true;
-            objetoLuz.GetComponent<Light>().enabled = true;
+            //ligada = true;
+            objetoLuz.GetComponent<Light>().enabled = ligada;
             funcionando = true;
         }
         else
@@ -96,7 +97,6 @@ public class Lampada : Interativo
         strInteracao = ligada ? "[E] - Desligar" : "[E] - Ligar";
         strInteracao2 = funcionando ? "[E] - Tirar lampada" : "[R] - Botar lampada";
     }
-
 
     protected void EncontrarLampadaFilha()
     {
