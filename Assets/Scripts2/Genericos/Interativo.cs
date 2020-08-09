@@ -45,18 +45,13 @@ public abstract class Interativo : MonoBehaviour
     // Leitura de arquivo de texto...
     protected TextAsset arquivo;   
     protected string strArquivo;  // String bruta dos dados do arquivo...
-    protected string[] strLinhas; // Array de linhas brutas do arquivo...
-    protected List<DialogModel> listaLinhas = new List<DialogModel>(); // Lista usada para a exibição dos dados...
-    protected int lidasCont = 0;
+    public string[] strLinhas; // Array de linhas brutas do arquivo...
+    public string[] strDados;  // Array de dados por linha...
+    public int contFala = 0;
+    public int tamanho = 0;
+    public string checaFim;
 
     //*********************************************************
-
-    /*
-    // Start is called before the first frame update
-    void Start()
-    {
-        EncontrarObjetos();
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -64,6 +59,7 @@ public abstract class Interativo : MonoBehaviour
         //DetectarPlayer();
     }
 
+    // Detectar proximidade do jogador...
     protected void DetectarPlayer()
     {
         // Detecta se a distancia entre player e objeto é inferior a um valor minimo estabelecido no inspector...
@@ -91,6 +87,7 @@ public abstract class Interativo : MonoBehaviour
         }
     }
 
+    // Obtem os objetos da cena via tag...
     protected void EncontrarObjetos()
     {
         // Encontra, via tag, os objetos usados no script...
@@ -110,6 +107,7 @@ public abstract class Interativo : MonoBehaviour
         txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
     }
 
+    // Preenchendo os textos de interação...
     protected void PreechendoUIinteracao()
     {
         // Checando se o objeto tem mais de uma interação...
@@ -129,19 +127,21 @@ public abstract class Interativo : MonoBehaviour
             txtIntr2.text = strInteracao2;
         }
 
-        LigaUIinteracao(true);
+        ExibirPainelIntr(true);
     }
 
+    // Limpando os textos de interação...
     protected void LimpandoUIinteracao()
     {
         txtNome.text = " ";
         txtIntr1.text = " ";
         txtIntr2.text = " ";
 
-        LigaUIinteracao(false);
+        ExibirPainelIntr(false);
     }
 
-    protected void LigaUIinteracao(bool comando)
+    // Ligando / desligando a exibição do painel de interação...
+    protected void ExibirPainelIntr(bool comando)
     {
         // Ativando / desativando a transparencia do painel de interação...
         Color cor = painelIntr.GetComponent<UnityEngine.UI.Image>().color;
@@ -150,92 +150,72 @@ public abstract class Interativo : MonoBehaviour
         painelIntr.GetComponent<UnityEngine.UI.Image>().color = cor;
     }
 
-    protected void LigaUIfala(bool comando)
+    // Ligando / desligando a exibição do painel de fala...
+    protected void ExibirPainelFala(bool comando)
     {
         // Ligando/Desligando a transparencia do painel...
         Color cor = painelFala.GetComponent<UnityEngine.UI.Image>().color;
         float transparencia = comando ? 1 : 0;
         cor.a = transparencia;
-        painelIntr.GetComponent<UnityEngine.UI.Image>().color = cor;
-        
-        // Definindo o conteúdo do campo de texto...
-        //txtFala.text = comando ? strFala : " ";
+        painelFala.GetComponent<UnityEngine.UI.Image>().color = cor;
     }
 
-    protected void CarregarArquivoBruto(string caminho)
+    // Carrega o arquivo de texto...
+    protected void CarregarArquivo(string caminhoP2)
     {
-        // CARREGA OS DADOS DO ARQUIVO NA MEMÓRIA
-
-        // A primeira parte do caminho deve ser dinamica para acomodar a escolha de idioma...
-        string caminhoCompleto = "Dialogos/PT-BR/" + caminho;
-
+        string caminhoP1 = "Dialogos/PT-BR/";
+        string caminhoCompleto = caminhoP1 + caminhoP2;
         arquivo = Resources.Load<TextAsset>(caminhoCompleto);
         strArquivo = arquivo.text;
         strLinhas = strArquivo.Split('\n');
 
-        string[] dados;
-
-        // Loop que adiciona cada linha a lista de objeto de fala...
-        for (int i = 0; i < strLinhas.Length; i++)
-        {
-            dados = strLinhas[i].Split('|'); // Separando os dados da linha por pipe...
-            string nome = dados[0];
-            string fala = dados[1];
-            listaLinhas.Add(new DialogModel(nome, fala)); // Jogando os dados da linha na lista...
-        }
+        tamanho = strLinhas.Length - 1;
     }
 
-    protected void ExibirTextoFala()
+    // Inicia e trata o fluxo do dialogo...
+    protected void IniciarDialogo(string caminho)
     {
-        // CUIDA DO PROCESSO DE EXIBIÇÃO DA LISTA DE LINHAS DE FALA...
-        Debug.Log("cont: " + lidasCont + " " + "tamanho: " + listaLinhas.Count);
-        if (lidasCont < listaLinhas.Count)
+        if(!GerenciadorInvt.Instancia.falando) // Iniciando o fluxo de dialogo...
         {
-            txtFala.text = listaLinhas[lidasCont].GetFala();
-            
-            lidasCont++;
+            //Debug.Log("iniciou");
+            CarregarArquivo(caminho);
+            ExibirPainelFala(true);
+            GerenciadorInvt.Instancia.falando = true;
+            //Debug.Log(strLinhas[contFala]);
+            strDados = strLinhas[contFala].Split('|');
+            txtFala.text = strDados[1];
+            contFala++;
         }
-        else
+        else // Fluxo já iniciado em iteração anterior...
         {
-            txtFala.text = " ";
-            lidasCont = 0;
-            //listaLinhas.Clear();
-            GerenciadorInvt.Instancia.falando = false; // Avisando que o dialogo acabou...
-        }
-    }
-
-    protected void AvancarTexto()
-    {
-        // Da avanco no dialogo por meio do clique do mouse...
-        if (GerenciadorInvt.Instancia.falando)
-        {
-            if (Input.GetMouseButtonDown(0))
+            if(contFala <= strLinhas.Length - 1) // Ainda não chegou ao fim do arquivo...
             {
-                ExibirTextoFala();
+                //Debug.Log(strLinhas[contFala]);
+                strDados = strLinhas[contFala].Split('|');
+                txtFala.text = strDados[1];
+                contFala++; 
+            }
+            else // Chegou ao fim...
+            {
+                //Debug.Log("ACABOU A LISTA!");
+                ExibirPainelFala(false);
+                txtFala.text = " ";
+                GerenciadorInvt.Instancia.falando = false;
+                contFala = 0;
             }
         }
     }
 
-    protected void IniciarDialogo(string caminho)
-    {
-        CarregarArquivoBruto(caminho); // Carregando arquivo na lista da memória...
-        LigaUIfala(true); // Exibindo o painel...
-        ExibirTextoFala(); // Exibindo a primeira linha...
-        GerenciadorInvt.Instancia.falando = true; // Deixando marcado que o jogo esta em momento de dialogo...
-
-        //strFala = texto;
-        //LigaUIfala(true);
-    }
-
+    // Checando se foi pedida alguma interação com o objeto...
     protected void ChecarInput()
     {
         // Checando qual foi a interação selecionada pelo player...
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando))
         {
             Interagir1();
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando))
         {
             Interagir2();
         }

@@ -23,15 +23,16 @@ public class Lampada : Interativo
     private void Update()
     {
         DetectarPlayer();
-        AvancarTexto();
     }
 
+    // Liga / Desliga o objeto de luz da lampada...
     private void LigaDesliga()
     {
         objetoLuz.GetComponent<Light>().enabled = !ligada;
         ligada = objetoLuz.GetComponent<Light>().enabled;
     }
 
+    // Interação 1...
     protected override void Interagir1()
     {
         // Ligando ou desligando a luz...
@@ -48,11 +49,11 @@ public class Lampada : Interativo
             else
             {
                 IniciarDialogo("OBJETOS/Lampada/no-lamp1");
-                //PreencherUIfala1("droga, tá faltando uma lampada aqui!");
             }
         }
     }
 
+    // Interação 2...
     protected override void Interagir2()
     {
         if (funcionando)
