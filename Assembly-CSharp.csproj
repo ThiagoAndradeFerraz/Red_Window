@@ -94,9 +94,11 @@
     <Compile Include="Assets\Scripts2\Genericos\DialogModel.cs" />
     <Compile Include="Assets\Scripts2\Genericos\Interativo.cs" />
     <Compile Include="Assets\Scripts2\Genericos\Objeto.cs" />
+    <Compile Include="Assets\Scripts2\Objetos\Computador.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Lampada.cs" />
     <Compile Include="Assets\Scripts2\Player\ControleThirdPerson.cs" />
     <None Include="Assets\Resources\Dialogos\PT-BR\Valquiria1.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Computador\PC-USAR-1.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah4-N.txt" />
     <None Include="Assets\Dialogos\Testes\DIALOGO-TESTE.txt" />
     <None Include="Assets\Dialogos\Fase1\MonolitoPH.txt" />
@@ -104,6 +106,8 @@
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah3.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Lampada\no-lamp1.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Computador\PC-VER1.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Lampada\no-lamp2.txt" />
     <None Include="Assets\Pensamentos\pensamento1.txt" />
     <None Include="Assets\EscalatorPro\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah1.txt" />

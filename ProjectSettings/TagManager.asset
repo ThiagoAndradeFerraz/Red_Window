@@ -29,6 +29,7 @@ TagManager:
   - txtIntrc1
   - txtIntrc2
   - painel_fala
+  - InputSenha
   layers:
   - Default
   - TransparentFX

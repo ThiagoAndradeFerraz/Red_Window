@@ -35,6 +35,8 @@ public class Lampada : Interativo
     // Interação 1...
     protected override void Interagir1()
     {
+        SetarIntr(1);
+
         // Ligando ou desligando a luz...
         if (funcionando)
         {
@@ -44,7 +46,7 @@ public class Lampada : Interativo
         {
             if(GerenciadorInvt.Instancia.contLampadas > 0)
             {
-                IniciarDialogo("OBJETOS/Lampada/no-lamp1");
+                IniciarDialogo("OBJETOS/Lampada/no-lamp2");
             }
             else
             {
@@ -56,6 +58,8 @@ public class Lampada : Interativo
     // Interação 2...
     protected override void Interagir2()
     {
+        SetarIntr(2);
+
         if (funcionando)
         {
             PegarLampada();
@@ -103,5 +107,10 @@ public class Lampada : Interativo
     {
         // Obtem o objeto de luz que acende e a apaga...
         objetoLuz = gameObject.transform.GetChild(0);
+    }
+
+    protected override void PosDialogo()
+    {
+        
     }
 }

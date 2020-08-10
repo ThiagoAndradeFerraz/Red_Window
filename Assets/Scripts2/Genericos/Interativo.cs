@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -45,11 +46,20 @@ public abstract class Interativo : MonoBehaviour
     // Leitura de arquivo de texto...
     protected TextAsset arquivo;   
     protected string strArquivo;  // String bruta dos dados do arquivo...
-    public string[] strLinhas; // Array de linhas brutas do arquivo...
-    public string[] strDados;  // Array de dados por linha...
-    public int contFala = 0;
-    public int tamanho = 0;
-    public string checaFim;
+    protected string[] strLinhas; // Array de linhas brutas do arquivo...
+    protected string[] strDados;  // Array de dados por linha...
+    protected int contFala = 0;
+    protected int tamanho = 0;
+    protected string checaFim;
+
+    // Usadas para ajustar o clique do mouse em cenas de dialogo...
+    protected bool intr1 = false;
+    protected bool intr2 = false;
+
+    //*********************************************************
+
+    // UI computador...
+    protected GameObject inputPC;
 
     //*********************************************************
 
@@ -105,6 +115,9 @@ public abstract class Interativo : MonoBehaviour
         // Dialogo...
         painelFala = GameObject.FindGameObjectWithTag("painel_fala");
         txtFala = GameObject.FindGameObjectWithTag("txtFala").GetComponent<Text>();
+
+        // Interação UI com o computador...
+        inputPC = GameObject.FindGameObjectWithTag("InputSenha");
     }
 
     // Preenchendo os textos de interação...
@@ -202,7 +215,25 @@ public abstract class Interativo : MonoBehaviour
                 txtFala.text = " ";
                 GerenciadorInvt.Instancia.falando = false;
                 contFala = 0;
+                PosDialogo();
             }
+        }
+    }
+
+    // Usado para marcar quak interação está sendo trabalhada...
+    protected void SetarIntr(int intr)
+    {
+        switch (intr)
+        {
+            case 1:
+                intr1 = true;
+                intr2 = false;
+                break;
+
+            case 2:
+                intr1 = false;
+                intr2 = true;
+                break;
         }
     }
 
@@ -210,12 +241,11 @@ public abstract class Interativo : MonoBehaviour
     protected void ChecarInput()
     {
         // Checando qual foi a interação selecionada pelo player...
-
-        if (Input.GetKeyDown(KeyCode.E) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando))
+        if (Input.GetKeyDown(KeyCode.E) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando && intr1))
         {
             Interagir1();
         }
-        else if (Input.GetKeyDown(KeyCode.R) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando))
+        else if (Input.GetKeyDown(KeyCode.R) || (Input.GetMouseButtonDown(0) && GerenciadorInvt.Instancia.falando && intr2))
         {
             Interagir2();
         }
@@ -231,4 +261,6 @@ public abstract class Interativo : MonoBehaviour
     protected abstract void Interagir1();        // Define o que é feito na primeira opção de interação...
     protected abstract void Interagir2();        // Define o que é feito na segunda opção de interação...
     protected abstract void DefinirInteracoes(); // Define os textos descritivos de ações...
+
+    protected abstract void PosDialogo(); // Define as ações que podem acontece após um dialogo... (OPCIONAL)
 }
