@@ -191,6 +191,7 @@ public abstract class Interativo : MonoBehaviour
         if(!GerenciadorInvt.Instancia.falando) // Iniciando o fluxo de dialogo...
         {
             //Debug.Log("iniciou");
+            GerenciadorInvt.Instancia.PausarParcialmente(0); // PAUSANDO O GAMEPLAY!!!
             CarregarArquivo(caminho);
             ExibirPainelFala(true);
             GerenciadorInvt.Instancia.falando = true;
@@ -215,6 +216,7 @@ public abstract class Interativo : MonoBehaviour
                 txtFala.text = " ";
                 GerenciadorInvt.Instancia.falando = false;
                 contFala = 0;
+                GerenciadorInvt.Instancia.PausarParcialmente(1); // DESPAUSANDO O GAMEPLAY!!!
                 PosDialogo();
             }
         }

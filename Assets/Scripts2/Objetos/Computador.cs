@@ -12,7 +12,7 @@ public class Computador : Interativo
     public Transform txtPlaceholder;
     public Transform txtInput;
 
-    protected bool esperandoSenha; // Define que tá esperando o input da senha...
+    private string senha = "abc"; // Senha do computador...
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class Computador : Interativo
     void Update()
     {
         DetectarPlayer();
+        AguardarInput();
     }
 
     protected override void DefinirInteracoes()
@@ -53,12 +54,16 @@ public class Computador : Interativo
     protected override void PosDialogo()
     {
         // Pedindo senha do computador...
-        //Debug.Log("DIGITE SUA SENHA");
+        GerenciadorInvt.Instancia.PausarParcialmente(0);
+        GerenciadorInvt.Instancia.esperandoSenha = true;
         PedirSenha(true);
     }
 
     protected void PedirSenha(bool comando)
     {
+        // Deixando o campo de entrada como clicavel...
+        inputPC.GetComponent<InputField>().interactable = true;
+
         // Setando a transparencia do input field...
         Color cor = inputPC.GetComponent<Image>().color;
         float transparencia = comando ? 1 : 0;
@@ -70,7 +75,25 @@ public class Computador : Interativo
         txtInput = inputPC.transform.GetChild(2);
 
         txtPlaceholder.GetComponent<Text>().text = comando ? "Digite sua senha" : " "; // O texto placeholder precisa variar de acordo com o idioma!!!
+    }
 
-
+    protected void AguardarInput()
+    {
+        if (GerenciadorInvt.Instancia.esperandoSenha)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                string entrada = inputPC.GetComponent<InputField>().text;
+                if(entrada == senha)
+                {
+                    Debug.Log("Acesso autorizado! Bem-Vindo!");
+                    
+                }
+                else
+                {
+                    Debug.Log("Senha incorreta. Acesso negado!");
+                }
+            }
+        }
     }
 }

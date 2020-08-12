@@ -25,7 +25,10 @@ public class ControleThirdPerson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movimento();
+        if (!GerenciadorInvt.Instancia.pausado)
+        {
+            Movimento();
+        }
     }
 
     private void Movimento()
