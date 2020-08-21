@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/FASES/1 - BIBLIOTECA.unity
+- path: Assets/Scenes/FASES/TERREO.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
