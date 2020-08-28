@@ -12,12 +12,8 @@ public class Lampada : Interativo
 
     private void Start()
     {
-        EncontrarObjetos();
+        IniciarBase(3, "Lampada");
         EncontrarLampadaFilha();
-
-        distMin = 3;
-        strNome = "Lampada";
-        DefinirInteracoes();
     }
 
     private void Update()

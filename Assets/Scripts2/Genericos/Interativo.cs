@@ -259,6 +259,16 @@ public abstract class Interativo : MonoBehaviour
         }
     }
 
+    // Método onde é iniciada algumas caracteristicas em comum a todos os interativos...
+    protected void IniciarBase(float dist, string nome)
+    {
+        distMin = dist;
+        strNome = nome;
+
+        EncontrarObjetos();
+        DefinirInteracoes();
+    }
+
     // Métodos abstratos obrigatórios para as classes herdeiras...
     protected abstract void Interagir1();        // Define o que é feito na primeira opção de interação...
     protected abstract void Interagir2();        // Define o que é feito na segunda opção de interação...

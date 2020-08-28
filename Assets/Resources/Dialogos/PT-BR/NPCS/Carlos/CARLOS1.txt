@@ -1,0 +1,24 @@
+CASSANDRA|Ahh... Com licença?
+DESCONHECIDO|AAHHHH MEU DEUS!
+DESCONHECIDO|...Você, você está viva???
+CASSANDRA|Sim, ...estou?
+DESCONHECIDO|Perdão perdão, é que você é a primeira pessoa não morta que vejo hoje.
+CASSANDRA|Primeira pessoa? 
+DESCONHECIDO|Tirando o meu primo, sim, você é a primeira pessoa que vejo hoje.
+CASSANDRA|Droga... droga... Então você não deve ter visto minha irmã.
+DESCONHECIDO|Eu temo que não. Como ela é?
+CASSANDRA|Pele um pouco escura, cabelo ruivo, mais ou menos dessa altura.
+DESCONHECIDO|Ficarei atento caso eu encontre alguem assim. 
+CASSANDRA|Obrigada. Bom, preciso ir atrás dela. Será que... será que você podia vir comigo? Tenho medo de andar sozinha por aqui.
+DESCONHECIDO|Eu... Eu sinto muito, mas não posso. Estou esperando meu primo voltar.
+CASSANDRA|Seu primo? 
+DESCONHECIDO|Sim. Vê aquela escuridão? O idiota achou que seria uma boa ideia ir lá, ver se conseguisse chamar ajuda.
+CASSANDRA|Corajoso ele hein.
+DESCONHECIDO|Eu diria mais que é um burro, mas agora estou preocupado, tenho medo dele não voltar, e caso ele volte e eu não estiver aqui...
+CASSANDRA|Eu entendo. Espero que ele volte.
+DESCONHECIDO|Obrigado. De novo, me desculpa.
+CASSANDRA|Está tudo bem. Ah... qual é seu nome mesmo?
+DESCONHECIDO|Carlos. Me chamo Carlos.
+CASSANDRA|Cassandra. Prazer em te conhecer. 
+Carlos|O prazer é todo meu. Estarei aqui caso precise.
+CASSANDRA|Ok.

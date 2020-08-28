@@ -17,10 +17,7 @@ public class Computador : Interativo
     // Start is called before the first frame update
     void Start()
     {
-        EncontrarObjetos();
-        distMin = 3;
-        strNome = "Computador";
-        DefinirInteracoes();
+        IniciarBase(3, "Computador");
     }
 
     // Update is called once per frame

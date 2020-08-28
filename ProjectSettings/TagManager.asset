@@ -30,6 +30,8 @@ TagManager:
   - txtIntrc2
   - painel_fala
   - InputSenha
+  - painelElevador
+  - btnsElevador
   layers:
   - Default
   - TransparentFX
