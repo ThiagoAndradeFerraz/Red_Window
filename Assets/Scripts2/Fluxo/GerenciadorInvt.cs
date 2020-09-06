@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class GerenciadorInvt : MonoBehaviour
     //*****************************
     // Inventário...
     public int contLampadas = 0;
+    public int pilulaVermelha = 0;
+    public int pilulaLaranja = 0;
     //*****************************
 
     //*****************************
@@ -29,6 +32,28 @@ public class GerenciadorInvt : MonoBehaviour
     public bool pausado = false;
     public bool esperandoSenha = false;
     //*****************************
+
+    //*****************************
+    // Estagios dos NPCs...
+    private int isaacEst = 1;
+    private int carlosEst = 1;
+
+    //******************************************
+    // Getters e Setters dos estagios de NPCs...
+    
+    // Isaac
+    public int getIsaac()
+    {
+        return isaacEst;
+    }
+
+    public void setIsaac(int est)
+    {
+        isaacEst = est;
+    }
+
+    //******************************************
+
 
 
     private void Awake()
@@ -73,5 +98,6 @@ public class GerenciadorInvt : MonoBehaviour
         // 0 -> Pausa | 1 -> Continuar
         Time.timeScale = comando;
         pausado = (comando == 0);
+        //Cursor.visible = (comando == 0);
     }
 }

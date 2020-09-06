@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Segmento 1/2 - Planeta/DIALOGO.unity
-    guid: 1da92b35e4ff6af46b95227db95f5577
-  - enabled: 0
-    path: Assets/Scenes/Segmento 1/2 - Planeta/GAMEPLAY.unity
-    guid: 92a63706693906941a1ed6bc5960f871
   - enabled: 1
-    path: Assets/Scenes/FASES/1 - BIBLIOTECA.unity
-    guid: 953fa5b1ea8e56941bbbecdb783eaa5d
+    path: Assets/Scenes/FASES/QUARTO_PLAYER.unity
+    guid: d2f5512b7e51485438f14d5380d70101
+  - enabled: 1
+    path: Assets/Scenes/FASES/CORREDOR1.unity
+    guid: f1a4eb810be488e4d9e602533a472d16
+  - enabled: 1
+    path: Assets/Scenes/FASES/TERREO.unity
+    guid: 7f2163300e3f9a44d82e3d7dd7eac83c
   m_configObjects: {}

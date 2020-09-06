@@ -28,11 +28,16 @@ public class ControleThirdPerson : MonoBehaviour
         if (!GerenciadorInvt.Instancia.pausado)
         {
             Movimento();
+
+            // ATAQUE
+            Ataque();
+
         }
     }
 
     private void Movimento()
     {
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -45,12 +50,12 @@ public class ControleThirdPerson : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift)){
                 speed = 12f;
-                velocidadeAnim = 1;
+                velocidadeAnim = 5f;
             }
             else
             {
                 speed = 5f;
-                velocidadeAnim = 0.5f;
+                velocidadeAnim = 1f;
             }
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -60,13 +65,36 @@ public class ControleThirdPerson : MonoBehaviour
             //float velocidade = ((Input.GetKeyDown(KeyCode.LeftShift)) ? 1f : 0.5f);
 
             // Chamando animação de movimento...
-            anim.SetFloat("speedAnim", velocidadeAnim, turnSmoothTime, Time.deltaTime);
+            //anim.SetFloat("speedAnim", velocidadeAnim, turnSmoothTime, Time.deltaTime);
+            anim.SetFloat("speedAnim", velocidadeAnim);
+
+            anim.SetBool("andando", true);
         }
         else
         {
             // Chamando a animação de Idle
-            anim.SetFloat("speedAnim", .0f, turnSmoothTime, Time.deltaTime);
+            //anim.SetFloat("speedAnim", .0f, turnSmoothTime, Time.deltaTime);
+            anim.SetFloat("speedAnim", .0f);
+            anim.SetBool("andando", false);
         }
+    }
+
+    private void Ataque()
+    {
+        // Deixando true ao apertar o botão...
+        if (Input.GetMouseButtonDown(0))
+        {
+            //anim.SetBool("h1", true);
+            anim.SetTrigger("h1");
+        }
+
+        /*
+        // Voltando ao normal
+        if (anim.GetBool("h1"))
+        {
+            anim.SetBool("h1", false);
+        }*/
+
     }
 
 }

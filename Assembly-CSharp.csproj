@@ -94,12 +94,14 @@
     <Compile Include="Assets\Scripts2\Genericos\DialogModel.cs" />
     <Compile Include="Assets\Scripts2\Genericos\Interativo.cs" />
     <Compile Include="Assets\Scripts2\Genericos\NPC.cs" />
+    <Compile Include="Assets\Scripts2\Loaders\QrtPlayer.cs" />
     <Compile Include="Assets\Scripts2\NPCS\Carlos.cs" />
     <Compile Include="Assets\Scripts2\NPCS\Isaac.cs" />
+    <Compile Include="Assets\Scripts2\Objetos\Coletaveis\Pilulas.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Computador.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Elevador.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Lampada.cs" />
-    <Compile Include="Assets\Scripts2\Objetos\Porta.cs" />
+    <Compile Include="Assets\Scripts2\Objetos\PortaQrtoPly.cs" />
     <Compile Include="Assets\Scripts2\Player\ControleThirdPerson.cs" />
     <None Include="Assets\Resources\Dialogos\PT-BR\Valquiria1.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Computador\PC-USAR-1.txt" />
@@ -110,6 +112,7 @@
     <None Include="Assets\Dialogos\Fase1\Hannah4-S.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\NPCS\Carlos\CARLOS1.txt" />
     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\NPCS\Isaac\IsaacE1.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah3.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Lampada\no-lamp1.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Computador\PC-VER1.txt" />
@@ -118,6 +121,7 @@
     <None Include="Assets\EscalatorPro\README.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah1.txt" />
     <None Include="Assets\Resources\Escolhas\PT-BR\escolhas.txt" />
+    <None Include="Assets\Resources\Dialogos\PT-BR\NPCS\Isaac\Isaac2.txt" />
     <None Include="Assets\Dialogos\Fase1\Hannah2.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

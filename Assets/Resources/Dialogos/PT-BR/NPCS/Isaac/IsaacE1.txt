@@ -1,0 +1,6 @@
+CASSANDRA|Suas pilulas.
+DESCONHECIDO|Mas hein?
+CASSANDRA|Suas pilulas. Eu trouxe as suas pilulas, como o senhor tinha pedido, lembra?
+DESCONHECIDO|Ah sim! Ótimo! Mê dê aqui por favor!
+DESCONHECIDO|...
+DESCONHECIDO|Obrigado. 

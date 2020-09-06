@@ -13,14 +13,23 @@ public class Isaac : NPC
     {
         SetarIntr(1);
 
-        switch (estagioIntr)
+        switch (GerenciadorInvt.Instancia.getIsaac())
         {
             case 1:
                 IniciarDialogo("NPCS/Isaac/Isaac1");
                 break;
 
             case 2:
-                Debug.Log("Ola");
+                if(GerenciadorInvt.Instancia.pilulaLaranja == 0 
+                    && GerenciadorInvt.Instancia.pilulaVermelha == 0)
+                {
+                    IniciarDialogo("NPCS/Isaac/Isaac2");
+                }
+                else
+                {
+                    // TRATAR DE COLOCAR UMA OPÇÃO DE ESCOLHA AQUI, NO MOMENTO APENAS UM CAMINHO ESTÁ SENDO TRATADO!
+                    IniciarDialogo("NPCS/Isaac/IsaacE1");
+                }
                 break;
         }
     }
@@ -32,10 +41,10 @@ public class Isaac : NPC
 
     protected override void PosDialogo()
     {
-        switch (estagioIntr)
+        switch (GerenciadorInvt.Instancia.getIsaac())
         {
             case 1:
-                estagioIntr = 2;
+                GerenciadorInvt.Instancia.setIsaac(2);
                 //IniciarBase(3, "Carlos");
                 break;
         }

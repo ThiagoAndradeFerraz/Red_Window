@@ -1,0 +1,4 @@
+CASSANDRA|Senhor?
+DESCONHECIDO|Trouxe as minhas pilulas?
+CASSANDRA|Ah... não, ainda nã--
+DESCONHECIDO|Então tá esperando o que porra? Quer ver eu caindo morto aqui? Traga logo a porra do meu remédio!
