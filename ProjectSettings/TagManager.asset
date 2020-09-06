@@ -42,10 +42,10 @@ TagManager:
   - 
   - 
   - telaPreta
-  - 
-  - 
-  - 
-  - 
+  - whatIsPlayer
+  - whatIsWall
+  - whatIsGround
+  - whatIsObst
   - 
   - 
   - 

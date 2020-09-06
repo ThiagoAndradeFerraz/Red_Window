@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts2\Genericos\NPC.cs" />
     <Compile Include="Assets\Scripts2\Loaders\QrtPlayer.cs" />
     <Compile Include="Assets\Scripts2\NPCS\Carlos.cs" />
+    <Compile Include="Assets\Scripts2\NPCS\Inimigos\Inimigo1.cs" />
     <Compile Include="Assets\Scripts2\NPCS\Isaac.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Coletaveis\Pilulas.cs" />
     <Compile Include="Assets\Scripts2\Objetos\Computador.cs" />
@@ -727,7 +728,16 @@
       <HintPath>C:/Users/thiag/OneDrive/Documentos/RED_WINDOW/Red_Window/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{3A2F2D53-B6CF-29F9-B6A2-830738932D3F}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{B0CAB95C-ED82-CF98-D590-E9D6D2CD9784}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
