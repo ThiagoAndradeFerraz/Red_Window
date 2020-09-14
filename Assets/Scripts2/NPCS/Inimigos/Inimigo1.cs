@@ -36,7 +36,8 @@ public class Inimigo1 : MonoBehaviour
                 anim.SetBool("andando", false);
 
                 // Atacar o alvo...
-                anim.SetTrigger("h1");
+                //anim.SetTrigger("h1");
+                anim.SetBool("h1Bool", true);
 
                 // Olhar alvo...
                 VirarProAlvo();

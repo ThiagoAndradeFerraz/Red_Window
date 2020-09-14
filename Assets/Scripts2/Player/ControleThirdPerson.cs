@@ -17,38 +17,52 @@ public class ControleThirdPerson : MonoBehaviour
     public Animator anim;
     private float velocidadeAnim = 0;
 
-    private void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (!GerenciadorInvt.Instancia.pausado)
         {
-            Movimento();
+            Movimento(); // Controle de movimentação...
+            Ataque(); // Controle de ataque...
+            Desviar();
 
-            // ATAQUE
-            Ataque();
-
+            /*
+            taNoChao = controle.isGrounded;
+            Debug.Log(taNoChao);*/
         }
     }
 
     private void Movimento()
     {
-
+        // Obtendo o input direcional...
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+        if (direction.magnitude >= 0.1f) // Teve input...
+        {
+            Andar(direction);
+        }
+        else // Está parado...
+        {
+            if (!controle.isGrounded)
+            {
+                Andar(direction); // Aplicando gravidade caso esteja parado e não esteja no chão...
+            }
+        }
+
+
+        /*
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            if (Input.GetKey(KeyCode.LeftShift)){
+
+            // DETERMINADA VELOCIDADE DE CORRIDA...
+            /*if (Input.GetKey(KeyCode.LeftShift))
+            {
                 speed = 12f;
                 velocidadeAnim = 5f;
             }
@@ -58,43 +72,81 @@ public class ControleThirdPerson : MonoBehaviour
                 velocidadeAnim = 1f;
             }
 
+            // PROVISÓRIO!!!!!!!!!!
+            speed = 9f;
+            velocidadeAnim = 5f;
+
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            // Gravidade...
+            moveDir.y -= 9.81f;
+
             controle.Move(moveDir * speed * Time.deltaTime);
 
-            // Definindo se tá correndo ou andando...
-            //float velocidade = ((Input.GetKeyDown(KeyCode.LeftShift)) ? 1f : 0.5f);
-
-            // Chamando animação de movimento...
-            //anim.SetFloat("speedAnim", velocidadeAnim, turnSmoothTime, Time.deltaTime);
             anim.SetFloat("speedAnim", velocidadeAnim);
 
             anim.SetBool("andando", true);
         }
         else
         {
-            // Chamando a animação de Idle
-            //anim.SetFloat("speedAnim", .0f, turnSmoothTime, Time.deltaTime);
+            // Chamando a animação de Idle...
             anim.SetFloat("speedAnim", .0f);
             anim.SetBool("andando", false);
-        }
+        }*/
+
     }
+
+    // Usado no método Movimento!
+    private void Andar(Vector3 direction)
+    {
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+        /*
+        // DETERMINADA VELOCIDADE DE CORRIDA...
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 12f;
+            velocidadeAnim = 5f;   
+        }
+        else
+        {
+            speed = 5f;
+            velocidadeAnim = 1f;    
+        }*/
+
+        // PROVISÓRIO!!!!!!!!!!
+        speed = 9f;
+        velocidadeAnim = 5f;
+
+        Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        
+        // Gravidade...
+        moveDir.y -= 9.81f;
+
+        controle.Move(moveDir * speed * Time.deltaTime);     
+    }
+
+
 
     private void Ataque()
     {
         // Deixando true ao apertar o botão...
         if (Input.GetMouseButtonDown(0))
         {
-            //anim.SetBool("h1", true);
-            anim.SetTrigger("h1");
+            //anim.SetTrigger("h1");
+            anim.SetBool("h1Bool", true);
         }
-
-        /*
-        // Voltando ao normal
-        if (anim.GetBool("h1"))
-        {
-            anim.SetBool("h1", false);
-        }*/
-
     }
 
+
+
+    private void Desviar()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.Translate(0, 0, 5);
+        }
+    }
 }

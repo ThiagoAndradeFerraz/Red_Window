@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts2\Objetos\Lampada.cs" />
     <Compile Include="Assets\Scripts2\Objetos\PortaQrtoPly.cs" />
     <Compile Include="Assets\Scripts2\Player\ControleThirdPerson.cs" />
+    <Compile Include="Assets\Scripts2\Player\EventosAnimPL.cs" />
     <None Include="Assets\Resources\Dialogos\PT-BR\Valquiria1.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\OBJETOS\Computador\PC-USAR-1.txt" />
     <None Include="Assets\Resources\Dialogos\PT-BR\NPCS\Isaac\Isaac1.txt" />
